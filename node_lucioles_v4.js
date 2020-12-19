@@ -1,5 +1,7 @@
 // Importation des modules
 var path = require('path');
+const fs = require('fs');
+var PORT = process.env.PORT || 3000;
 
 // var, const, let :
 // https://medium.com/@vincent.bocquet/var-let-const-en-js-quelles-diff%C3%A9rences-b0f14caa2049
@@ -32,8 +34,8 @@ async function listDatabases(client){
 // MongoDB cluster, call functions that query our database, and
 // disconnect from our cluster.
 async function v0(){
-    const mongoName = "lucioles"                   //Nom de la base
-    const mongoUri = 'mongodb://localhost:27017/'; //URL de connection		
+    const mongoName = "Cluster0"                   //Nom de la base
+    const mongoUri = 'mongodb+srv://Filipe:Moustique@cluster0.pawmh.mongodb.net/<dbname>?retryWrites=true&w=majority';		
     //const uri = 'mongodb://10.9.128.189:27017/'; //URL de connection		
     //const uri = 'mongodb+srv://menez:mettrelevotre@cluster0-x0zyf.mongodb.net/test?retryWrites=true&w=majority';
     
@@ -235,6 +237,8 @@ app.get('/esp/:what', function (req, res) {
 //================================================================
 // L'application est accessible sur le port 3000
 
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+const server = app.listen(PORT, () => {
+    console.log('Server listening on port: ', server.address().port);
 });
+
+module.exports = server;
