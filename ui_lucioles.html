@@ -7,13 +7,21 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="ui_lucioles.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<link rel="stylesheet" href="gauge.css">
   </head>
   <body>
     <h1 style="max-width: 600px; margin: 0 auto" ; align="center">ESPs of Lucioles</h1>
 
-    <br>
-    <div id="container1" style="max-width: 1000px; height: 350px; margin: 0 auto"></div>
-    <div id="container2" style="max-width: 1000px; height: 350px; margin: 0 auto"></div>    
-    <div id="mydiv"></div>
+<figure class="highcharts-figure">
+    <div id="container1"></div>
+    <div id="container2"></div>
+
+    <p class="highcharts-description">
+       Ce site web à pour but de tracker les ESP en temps réel, les informations sont constamment mise à jour.
+    </p>
+</figure>
   </body> 
 </html>
